@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>SEASENSE - Belajar Laut Seru</title>
+
+<style>
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: "Comic Sans MS", Arial, sans-serif;
+    background: #e0f7ff;
+    color: #034b63;
+    background-image: url('pantai.jpg');
+}
+
+/* Overlay agar teks jelas */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        rgba(255,255,255,0.4),
+        rgba(255,255,255,0.7)
+    );
+    z-index: -1;
+}
+
+/* ===== SPLINE BACKGROUND ===== */
+#spline-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+}
+
+#spline-iframe {
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    border: none;
+    animation: floatBG 10s ease-in-out infinite;
+}
+
+@keyframes floatBG {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: linear-gradient(to right, #00b4db, #0083b0);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* ===== SECTION ===== */
+.hero {
+    padding: 30px;
+    text-align: justify;
+    background: #b3ecff;
+}
+
+.content {
+    background: rgba(255,255,255,0.8);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 1000px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.warning { background: #fff3cd; }
+.success { background: #d4edda; }
+
+/* ===== LIST ===== */
+.content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content li {
+    margin: 8px 0;
+}
+
+/* ===== MATERI TAMBAHAN ===== */
+.content.empty {
+    background: linear-gradient(180deg, #e8fff7, #f9fffc);
+}
+
+.content.empty ul li {
+    background: #ccfbf1;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    background: #fef3c7;
+    padding: 15px;
+    border-left: 6px solid #facc15;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ===== FLIPBOOK ===== */
+.flipbook-section {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.flipbook-btn {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== VIDEO ===== */
+.video-section {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    padding-top: 56.25%;
+    margin: auto;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ===== QUIZ ===== */
+.quiz {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.question {
+    background: #f0faff;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.quiz button {
+    padding: 10px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 12px;
+    background: #0077b6;
+    color: white;
+    cursor: pointer;
+}
+
+.reset { background: #f59e0b; }
+
+/* ===== ROBOT ===== */
+#robot-section {
+    display: none;
+    text-align: center;
+    margin: 60px auto;
+}
+
+.spline-wrapper {
+    max-width: 900px;
+    height: 450px;
+    margin: auto;
+}
+
+.spline-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: none;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #0077b6;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SPLINE BACKGROUND -->
+<div id="spline-bg">
+<iframe id="spline-iframe"
+src="https://my.spline.design/pigislandcopy-t4S0DeRAVRTcg0ZnoDKkZ2KV/"></iframe>
+</div>
+
+<header class="header">
+<h1>🌊 SEASENSE 🐠</h1>
+<p>Belajar Laut & Pantai dengan Cara Seru!</p>
+</header>
+
+<section class="hero">
+<h2>Ayo Kenalan dengan Muara Gembong 🌴</h2>
+<p>Muara Gembong memiliki ekosistem mangrove yang sangat penting sebagai pelindung pantai, rumah biota laut, dan penyerap karbon.</p>
+</section>
+
+<section class="content">
+<h2>🌳 Keajaiban Mangrove</h2>
+<ul>
+<li>🛡️ Melindungi pantai</li>
+<li>🐟 Rumah ikan</li>
+<li>🐦 Habitat burung</li>
+</ul>
+</section>
+
+<section class="content warning">
+<h2>🌍 Tantangan Lingkungan</h2>
+<p>Abrasi dan banjir rob menjadi ancaman utama.</p>
+</section>
+
+<section class="content success">
+<h2>🌱 Upaya Pelestarian</h2>
+<ul>
+<li>🌿 Penanaman mangrove</li>
+<li>🤝 Kerja sama warga</li>
+</ul>
+</section>
+
+<section class="content empty">
+<h2>📘 Materi Tambahan</h2>
+<p class="highlight">Menjaga mangrove = menjaga masa depan 🌱</p>
+</section>
+
+<section class="flipbook-section">
+<a href="https://online.fliphtml5.com/vkxut/loao/index.html"
+target="_blank" class="flipbook-btn">
+📖 Buka Flipbook
+</a>
+</section>
+
+<section class="video-section">
+<h2>🎬 Video Animasi</h2>
+<div class="video-wrapper">
+<iframe id="video"
+src="https://drive.google.com/file/d/1m5hSpSlvyYS4uF0zvRZsEzsE1tx3IZ_9/preview"></iframe>
+</div>
+<button onclick="playVideo()">▶️ Putar Video</button>
+</section>
+
+<section class="quiz">
+<h2>🧠 Kuis Muara Gembong</h2>
+<p id="score">Skor: 0</p>
+<button onclick="mulaiKuis()">🎯 Mulai Kuis</button>
+
+<div id="quiz-box" style="display:none">
+<div class="question">
+<p>Muara Gembong ada di?</p>
+<button onclick="jawab(true)">Bekasi</button>
+<button onclick="jawab(false)">Bandung</button>
+</div>
+
+<div class="question">
+<p>Pohon khas pesisir?</p>
+<button onclick="jawab(true)">Bakau</button>
+<button onclick="jawab(false)">Pinus</button>
+</div>
+
+<button class="reset" onclick="ulangKuis()">🔄 Ulangi</button>
+</div>
+</section>
+
+<section id="robot-section">
+<h2>🎉 Hadiah Robot!</h2>
+<div class="spline-wrapper">
+<iframe src="https://my.spline.design/superkidrobotcopy-x6EoCbLA7R1HInyG1R1YFl5T/"></iframe>
+</div>
+</section>
+
+<footer class="footer">
+<p>🌊 SEASENSE © 2025</p>
+</footer>
+
+<script>
+let skor = 0;
+
+function mulaiKuis(){
+    skor = 0;
+    document.getElementById("score").innerText = "Skor: 0";
+    document.getElementById("quiz-box").style.display = "block";
+}
+
+function jawab(benar){
+    if(benar){
+        skor++;
+        document.getElementById("score").innerText = "Skor: " + skor;
+        if(skor >= 2){
+            document.getElementById("robot-section").style.display = "block";
+        }
+    }
+}
+
+function ulangKuis(){
+    skor = 0;
+    document.getElementById("score").innerText = "Skor: 0";
+    document.getElementById("robot-section").style.display = "none";
+}
+
+function playVideo(){
+    let v = document.getElementById("video");
+    v.src += "?autoplay=1";
+}
+</script>
+
+</body>
+</html>

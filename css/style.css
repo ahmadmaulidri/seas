@@ -9,7 +9,7 @@ body {
   background: #e0f7ff;
   color: #034b63;
   line-height: 1.6;
-  font-size: clamp(1rem, 3vw, 2.2rem);
+  font-size: clamp(1rem, 4vw, 3.2rem);
 }
 
 /* ===== RESPONSIVE TYPOGRAPHY ===== */
